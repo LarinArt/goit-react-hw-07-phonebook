@@ -1,7 +1,7 @@
 import { Formik, Form, ErrorMessage } from 'formik';
 import { MainTitle, Label, StyledField } from './ChangeContactForm.styled';
 import { Title } from '../ui/Title';
-import { Button } from '../ui/Modal/Modal.styled';
+import { Button } from 'components/ui/Button';
 import {
   useChangeContactMutation,
   useGetContactByidQuery,

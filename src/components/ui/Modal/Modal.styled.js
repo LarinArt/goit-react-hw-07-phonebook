@@ -1,4 +1,5 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
+import { breakpoints } from 'styleConfig/breakpoints';
 
 export const Backdrop = styled.div`
   position: fixed;
@@ -8,7 +9,7 @@ export const Backdrop = styled.div`
   width: 100vw;
   height: 100vh;
 
-  background-color: var(--backdrop-bg-color);
+  background-color: ${p => p.theme.colors.backdropBgColor};
 `;
 
 export const ModalWrapper = styled.div`
@@ -21,15 +22,15 @@ export const ModalWrapper = styled.div`
   height: auto;
   padding: 10px;
 
-  background-color: var(--main-bg-color);
-  color: var(--main-text-color);
+  background-color: ${p => p.theme.colors.mainBgColor};
+  color: ${p => p.theme.colors.mainTextColor};
 
-  @media screen and (min-width: 768px) {
+  @media (${breakpoints.tablet}) {
     width: 600px;
     padding: 30px;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media (${breakpoints.laptop}) {
     padding: 50px;
   }
 `;
@@ -39,15 +40,15 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  border-bottom: 1px solid var(--accent-bg-color);
+  border-bottom: 1px solid ${p => p.theme.colors.accentBgColor};
 
   margin-bottom: 35px;
   padding-bottom: 25px;
 `;
 
 export const Title = styled.h2`
-  font-size: 30px;
-  font-weight: 900;
+  font-size: ${p => p.theme.fontSize.xl};
+  font-weight: ${p => p.theme.fontWeights.bold};
   text-transform: uppercase;
 `;
 
@@ -59,16 +60,16 @@ export const Button = styled.button`
   width: 40px;
   height: 40px;
 
-  background-color: var(--second-bg-color);
-  color: var(--second-text-color);
+  background-color: ${p => p.theme.colors.secondBgColor};
+  color: ${p => p.theme.colors.secondTextColor};
   font-family: inherit;
   border: none;
 
   cursor: pointer;
-  transition: background-color var(--main-hover-animation);
+  transition: background-color ${p => p.theme.colors.mainAnimationHover};
 
   :hover,
   :focus {
-    background-color: var(--accent-bg-color);
+    background-color: ${p => p.theme.colors.accentBgColor};
   }
 `;

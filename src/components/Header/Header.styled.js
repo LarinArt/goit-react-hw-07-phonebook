@@ -1,14 +1,14 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Title = styled(Link)`
   display: block;
-  font-size: 36px;
+  font-size: ${p => p.theme.fontSize.xxl};
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: ${p => p.theme.fontWeights.bold};
   letter-spacing: 2px;
 
-  color: var(--main-text-color);
+  color: ${p => p.theme.colors.mainTextColor};
 
   padding-top: 20px;
   padding-bottom: 20px;
@@ -23,17 +23,17 @@ export const Button = styled(Link)`
   height: 40px;
   margin-bottom: 50px;
 
-  background-color: var(--accent-bg-color);
-  color: var(--second-text-color);
+  background-color: ${p => p.theme.colors.secondBgColor};
+  color: ${p => p.theme.colors.secondTextColor};
   font-family: inherit;
   border: none;
 
   cursor: pointer;
-  transition: background-color var(--main-hover-animation);
+  transition: background-color ${p => p.theme.colors.mainAnimationHover};
 
   :hover,
   :focus {
-    background-color: var(--second-bg-color);
+    background-color: ${p => p.theme.colors.accentBgColor};
   }
 `;
 

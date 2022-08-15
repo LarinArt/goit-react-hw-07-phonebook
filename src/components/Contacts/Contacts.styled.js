@@ -1,7 +1,8 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
+import { breakpoints } from 'styleConfig/breakpoints';
 
 export const List = styled.ul`
-  @media screen and (min-width: 768px) {
+  @media (${breakpoints.tablet}) {
     display: flex;
     flex-wrap: wrap;
     margin: -10px;
@@ -18,12 +19,12 @@ export const Item = styled.li`
     margin-bottom: 0;
   }
 
-  @media screen and (min-width: 768px) {
+  @media (${breakpoints.tablet}) {
     width: calc((100% - 4 * 10px) / 2);
     margin: 10px;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media (${breakpoints.laptop}) {
     width: calc((100% - 6 * 10px) / 3);
   }
 `;

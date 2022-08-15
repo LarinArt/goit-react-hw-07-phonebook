@@ -1,4 +1,5 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
+import { breakpoints } from 'styleConfig/breakpoints';
 
 export const Button = styled.button`
   display: flex;
@@ -8,20 +9,20 @@ export const Button = styled.button`
   width: 200px;
   height: 40px;
 
-  background-color: var(--accent-bg-color);
-  color: var(--second-text-color);
+  background-color: ${p => p.theme.colors.secondBgColor};
+  color: ${p => p.theme.colors.secondTextColor};
   font-family: inherit;
   border: none;
 
   cursor: pointer;
-  transition: background-color var(--main-hover-animation);
+  transition: background-color ${p => p.theme.colors.mainAnimationHover};
 
   :hover,
   :focus {
-    background-color: var(--second-bg-color);
+    background-color: ${p => p.theme.colors.accentBgColor};
   }
 
-  @media screen and (min-width: 768px) {
-    width: 300px;
+  @media (${breakpoints.tablet}) {
+    width: 270px;
   }
 `;

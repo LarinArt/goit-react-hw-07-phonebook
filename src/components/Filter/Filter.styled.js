@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 export const Label = styled.label`
   display: flex;
@@ -9,8 +9,8 @@ export const Label = styled.label`
 `;
 
 export const Text = styled.p`
-  font-weight: 600;
-  color: var(--main-text-color);
+  font-weight: ${p => p.theme.fontWeights.normal};
+  color: ${p => p.theme.colors.mainTextColor};
   margin-bottom: 5px;
 `;
 
@@ -19,18 +19,18 @@ export const Input = styled.input`
   height: 40px;
   padding: 0 10px 0 10px;
 
-  border: 1px solid var(--second-bg-color);
+  border: 1px solid ${p => p.theme.colors.secondBgColor};
   outline: none;
 
-  color: var(--main-text-color);
+  color: ${p => p.theme.colors.mainTextColor};
   font-size: 14px;
 
   :focus {
-    border-color: var(--accent-bg-color);
+    border-color: ${p => p.theme.colors.accentBgColor};
   }
 
   ::placeholder {
-    font-size: 12px;
-    color: var(--main-text-color);
+    font-size: ${p => p.theme.fontSize.xs};
+    color: ${p => p.theme.colors.mainTextColor};
   }
 `;

@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 export const Text = styled.p`
-  font-size: 20px;
+  font-size: ${p => p.theme.fontSize.l};
   margin-bottom: 30px;
 `;
 
@@ -30,17 +30,17 @@ export const ButtonCancel = styled.button`
   width: 100px;
   height: 30px;
 
-  background-color: var(--second-bg-color);
-  color: var(--second-text-color);
+  background-color: ${p => p.theme.colors.secondBgColor};
+  color: ${p => p.theme.colors.secondTextColor};
   font-family: inherit;
   border: none;
 
   cursor: pointer;
-  transition: background-color var(--main-hover-animation);
+  transition: background-color ${p => p.theme.colors.mainAnimationHover};
 
   :hover,
   :focus {
-    background-color: var(--accent-bg-color);
+    background-color: ${p => p.theme.colors.accentBgColor};
   }
 `;
 
@@ -53,15 +53,15 @@ export const ButtonDelete = styled.button`
   height: 30px;
 
   background-color: red;
-  color: var(--second-text-color);
+  color: ${p => p.theme.colors.secondTextColor};
   font-family: inherit;
   border: none;
 
   cursor: pointer;
-  transition: background-color var(--main-hover-animation);
+  transition: background-color ${p => p.theme.colors.mainAnimationHover};
 
   :hover,
   :focus {
-    background-color: var(--accent-bg-color);
+    background-color: ${p => p.theme.colors.accentBgColor};
   }
 `;

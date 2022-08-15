@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div``;
@@ -14,14 +14,14 @@ export const GoBack = styled.button`
 
   border: none;
   background-color: #2b2b2b;
-  color: var(--second-text-color);
+  color: ${p => p.theme.colors.secondTextColor};
 
   cursor: pointer;
-  transition: background-color var(--main-hover-animation);
+  transition: background-color ${p => p.theme.colors.mainAnimationHover};
 
   :hover,
   :focus {
-    background-color: var(--accent-bg-color);
+    background-color: ${p => p.theme.colors.accentBgColor};
   }
 `;
 
@@ -30,18 +30,18 @@ export const PersonalData = styled.div`
 `;
 
 export const Name = styled.h2`
-  font-weight: 700;
-  font-size: 25px;
+  font-weight: ${p => p.theme.fontWeights.semibold};
+  font-size: ${p => p.theme.fontSize.xl};
   text-align: center;
 
-  color: var(--accent-text-color);
+  color: ${p => p.theme.colors.accentTextColor};
 
   padding: 15px;
   margin-bottom: 15px;
 `;
 
 export const Label = styled.span`
-  color: var(--accent-text-color);
+  color: ${p => p.theme.colors.accentTextColor};
   margin-right: 5px;
 `;
 
@@ -67,14 +67,14 @@ export const Button = styled.button`
 
   border: none;
   background-color: #2b2b2b;
-  color: var(--second-text-color);
+  color: ${p => p.theme.colors.secondTextColor};
 
   cursor: pointer;
-  transition: background-color var(--main-hover-animation);
+  transition: background-color ${p => p.theme.colors.mainAnimationHover};
 
   :hover,
   :focus {
-    background-color: var(--accent-bg-color);
+    background-color: ${p => p.theme.colors.accentBgColor};
   }
 `;
 
@@ -88,13 +88,13 @@ export const EditButton = styled(Link)`
 
   border: none;
   background-color: #2b2b2b;
-  color: var(--second-text-color);
+  color: ${p => p.theme.colors.secondTextColor};
 
   cursor: pointer;
-  transition: background-color var(--main-hover-animation);
+  transition: background-color ${p => p.theme.colors.mainAnimationHover};
 
   :hover,
   :focus {
-    background-color: var(--accent-bg-color);
+    background-color: ${p => p.theme.colors.accentBgColor};
   }
 `;

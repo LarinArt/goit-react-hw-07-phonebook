@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { Field } from 'formik';
 
 export const Label = styled.label`
@@ -11,18 +11,18 @@ export const StyledField = styled(Field)`
   height: 40px;
   padding: 0 10px 0 10px;
 
-  border: 1px solid var(--second-bg-color);
+  border: 1px solid ${p => p.theme.colors.secondBgColor};
   outline: none;
 
-  color: var(--main-text-color);
-  font-size: 14px;
+  color: ${p => p.theme.colors.mainTextColor};
+  font-size: ${p => p.theme.fontSize.s};
 
   :focus {
-    border-color: var(--accent-bg-color);
+    border-color: ${p => p.theme.colors.accentBgColor};
   }
 
   ::placeholder {
-    font-size: 12px;
-    color: var(--main-text-color);
+    font-size: ${p => p.theme.fontSize.xs};
+    color: ${p => p.theme.colors.mainTextColor};
   }
 `;

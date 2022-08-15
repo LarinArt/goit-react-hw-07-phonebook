@@ -1,40 +1,41 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { breakpoints } from 'styleConfig/breakpoints';
 
 export const Wrapper = styled.div`
   margin-bottom: 50px;
 
-  @media screen and (min-width: 768px) {
+  @media (${breakpoints.tablet}) {
     margin-bottom: 0;
   }
 `;
 
 export const StyledLink = styled(Link)`
-  color: var(--main-text-color);
+  color: ${p => p.theme.colors.mainTextColor};
 `;
 
 export const Label = styled.span`
-  color: var(--accent-text-color);
-  font-size: 14px;
+  color: ${p => p.theme.colors.accentTextColor};
+  font-size: ${p => p.theme.fontSize.s};
   margin-right: 5px;
 `;
 
 export const Name = styled.p`
-  font-weight: 700;
-  font-size: 18px;
+  font-weight: ${p => p.theme.fontWeights.semibold};
+  font-size: ${p => p.theme.fontSize.l};
   text-align: center;
 
   background-color: black;
-  color: var(--second-text-color);
+  color: ${p => p.theme.colors.secondTextColor};
 
   padding: 10px;
   margin-bottom: 15px;
 
-  @media screen and (min-width: 768px) {
+  @media (${breakpoints.tablet}) {
     margin-bottom: 25px;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media (${breakpoints.laptop}) {
     margin-bottom: 30px;
   }
 `;
@@ -62,13 +63,13 @@ export const Button = styled.button`
 
   border: none;
   background-color: #2b2b2b;
-  color: var(--second-text-color);
+  color: ${p => p.theme.colors.secondTextColor};
 
   cursor: pointer;
-  transition: background-color var(--main-hover-animation);
+  transition: background-color ${p => p.theme.colors.mainAnimationHover};
 
   :hover,
   :focus {
-    background-color: var(--accent-bg-color);
+    background-color: ${p => p.theme.colors.accentBgColor};
   }
 `;

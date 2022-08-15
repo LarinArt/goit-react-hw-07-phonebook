@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 export const Icon = styled(AiOutlineLoading3Quarters)`

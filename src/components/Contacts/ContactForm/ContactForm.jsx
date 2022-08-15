@@ -1,6 +1,5 @@
 import { Label, StyledField } from './ContactForm.styled';
 import { Title } from '../../ui/Modal/Modal.styled';
-import { Button } from '../../ui/Modal/Modal.styled';
 import {
   useCreateContactMutation,
   useGetContactsQuery,
@@ -10,6 +9,7 @@ import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import { Report } from 'notiflix';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Button } from 'components/ui/Button';
 
 function ContactForm() {
   const navigate = useNavigate();
