@@ -3,11 +3,8 @@ import { Link } from 'react-router-dom';
 import { breakpoints } from 'styleConfig/breakpoints';
 
 export const Wrapper = styled.div`
-  margin-bottom: 50px;
-
-  @media (${breakpoints.tablet}) {
-    margin-bottom: 0;
-  }
+  width: 280px;
+  margin-bottom: 10px;
 `;
 
 export const StyledLink = styled(Link)`
@@ -31,13 +28,9 @@ export const Name = styled.p`
   padding: 10px;
   margin-bottom: 15px;
 
-  @media (${breakpoints.tablet}) {
-    margin-bottom: 25px;
-  }
-
-  @media (${breakpoints.laptop}) {
+  /* @media (${breakpoints.laptop}) {
     margin-bottom: 30px;
-  }
+  } */
 `;
 
 export const Number = styled.p`

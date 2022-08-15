@@ -6,7 +6,6 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
 
-  width: 200px;
   height: 40px;
 
   background-color: ${p => p.theme.colors.secondBgColor};

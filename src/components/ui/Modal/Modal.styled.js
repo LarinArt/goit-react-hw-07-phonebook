@@ -29,10 +29,6 @@ export const ModalWrapper = styled.div`
     width: 600px;
     padding: 30px;
   }
-
-  @media (${breakpoints.laptop}) {
-    padding: 50px;
-  }
 `;
 
 export const Wrapper = styled.div`

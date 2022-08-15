@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Title = styled(Link)`
-  display: block;
+  display: flex;
+  justify-content: center;
   font-size: ${p => p.theme.fontSize.xxl};
   text-transform: uppercase;
   font-weight: ${p => p.theme.fontWeights.bold};
@@ -21,7 +22,7 @@ export const Button = styled(Link)`
 
   width: 270px;
   height: 40px;
-  margin-bottom: 50px;
+  margin: 50px auto;
 
   background-color: ${p => p.theme.colors.secondBgColor};
   color: ${p => p.theme.colors.secondTextColor};

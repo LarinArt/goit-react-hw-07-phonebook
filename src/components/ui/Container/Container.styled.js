@@ -1,22 +1,12 @@
 import styled from 'styled-components';
-import { breakpoints } from 'styleConfig/breakpoints';
 
 export const ContainerWrapper = styled.div`
-  width: 320px;
-  margin: 0 auto;
-  padding: 50px 10px 50px 10px;
-  /* width: 1440px;
+  /* width: 1440px; */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 auto; */
-
-  @media (${breakpoints.tablet}) {
-    width: 768px;
-  }
-  @media (${breakpoints.laptop}) {
-    width: 1440px;
-  }
+  margin: 0 auto;
 `;
 
 export const Title = styled.h2`

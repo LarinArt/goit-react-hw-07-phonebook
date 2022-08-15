@@ -4,7 +4,6 @@ export const Label = styled.label`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   margin-bottom: 50px;
 `;
 
@@ -15,7 +14,7 @@ export const Text = styled.p`
 `;
 
 export const Input = styled.input`
-  width: 95%;
+  width: 300px;
   height: 40px;
   padding: 0 10px 0 10px;
 

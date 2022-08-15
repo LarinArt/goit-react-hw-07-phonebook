@@ -10,16 +10,20 @@ function App() {
   return (
     <>
       <Container>
-        {/* <Section> */}
-        <Header />
+        <Section>
+          <Header />
+
+          <Routes>
+            <Route path="/" element={<ContactsPage />} />
+            <Route path="/contacts/add" element={<AddContactPage />} />
+            <Route
+              path="/contacts/:contactId/*"
+              element={<ContactInfoPage />}
+            />
+            <Route path="*" element={<ContactsPage />} />
+          </Routes>
+        </Section>
       </Container>
-      <Routes>
-        <Route path="/" element={<ContactsPage />} />
-        <Route path="/contacts/add" element={<AddContactPage />} />
-        <Route path="/contacts/:contactId/*" element={<ContactInfoPage />} />
-        <Route path="*" element={<ContactsPage />} />
-      </Routes>
-      {/* </Section> */}
     </>
   );
 }
