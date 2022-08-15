@@ -5,7 +5,6 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-
   height: 40px;
 
   background-color: ${p => p.theme.colors.secondBgColor};
