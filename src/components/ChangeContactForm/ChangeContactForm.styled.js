@@ -17,18 +17,18 @@ export const StyledField = styled(Field)`
   padding: 0 10px 0 10px;
 
   border: none;
-  border-bottom: 1px solid var(--second-bg-color);
+  border-bottom: 1px solid ${p => p.theme.colors.secondBgColor};
   outline: none;
 
-  color: var(--main-text-color);
+  color: ${p => p.theme.colors.mainTextColor};
   font-size: 14px;
 
   :focus {
-    border-color: var(--accent-bg-color);
+    border-color: ${p => p.theme.colors.accentBgColor};
   }
 
   ::placeholder {
     font-size: 12px;
-    color: var(--main-text-color);
+    color: ${p => p.theme.colors.mainTextColor};
   }
 `;
