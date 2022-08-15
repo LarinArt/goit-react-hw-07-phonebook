@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { breakpoints } from 'styleConfig/breakpoints';
 
 export const Wrapper = styled.div`
-  width: 280px;
+  width: 250px;
   margin-bottom: 10px;
 `;
 
@@ -22,7 +22,7 @@ export const Name = styled.p`
   font-size: ${p => p.theme.fontSize.l};
   text-align: center;
 
-  background-color: black;
+  background-color: ${p => p.theme.colors.accentBgColor};
   color: ${p => p.theme.colors.secondTextColor};
 
   padding: 10px;

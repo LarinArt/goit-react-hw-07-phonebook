@@ -4,7 +4,7 @@ import Header from 'components/Header';
 import ContactsPage from 'pages/ContactsPage';
 import AddContactPage from 'pages/AddContactPage';
 import ContactInfoPage from 'pages/ContactInfoPage';
-import { Section } from './ui/Section';
+import { Section } from './components/ui/Section';
 
 function App() {
   return (

@@ -14,7 +14,7 @@ export const Text = styled.p`
 `;
 
 export const Input = styled.input`
-  width: 300px;
+  width: 270px;
   height: 40px;
   padding: 0 10px 0 10px;
 

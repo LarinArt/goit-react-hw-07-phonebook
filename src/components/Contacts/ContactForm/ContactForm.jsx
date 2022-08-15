@@ -1,5 +1,5 @@
 import { Label, StyledField } from './ContactForm.styled';
-import { Title } from '../../ui/Modal/Modal.styled';
+import { Title } from 'components/ui/Title';
 import {
   useCreateContactMutation,
   useGetContactsQuery,
