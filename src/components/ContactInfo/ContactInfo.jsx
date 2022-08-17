@@ -21,7 +21,6 @@ import DeletingContact from 'components/DeletingContact';
 function ContactInfo() {
   const { showModal, toggleModal } = useShowModal(false);
 
-  // const navigate = useNavigate();
   const { contactId } = useParams();
 
   const {
@@ -46,9 +45,6 @@ function ContactInfo() {
       {error && <NotFound data={error.data} status={error.status} />}
       {contact && (
         <Wrapper>
-          {/* <GoBack type="button" onClick={() => navigate('/')}>
-            <FaArrowLeft />
-          </GoBack> */}
           <PersonalData>
             <Name>{contact.name}</Name>
             <Phone>

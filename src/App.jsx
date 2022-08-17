@@ -1,14 +1,17 @@
 import { Routes, Route } from 'react-router-dom';
 import Container from 'components/ui/Container';
+import HomePage from 'pages/HomePage';
+import AddContactPage from 'pages/AddContactPage';
+import ContactInfoPage from 'pages/ContactInfoPage';
 import { Section } from './components/ui/Section';
 import { SharedLayout } from 'layout/SharedLayout';
-import { lazy } from 'react';
+// import { lazy } from 'react';
 
-const HomePage = lazy(() => import('pages/HomePage'));
-const AddContactPage = lazy(() => import('pages/AddContactPage'));
-const ContactInfoPage = lazy(() => import('pages/ContactInfoPage'));
+// const HomePage = lazy(() => import('pages/HomePage'));
+// const AddContactPage = lazy(() => import('pages/AddContactPage'));
+// const ContactInfoPage = lazy(() => import('pages/ContactInfoPage'));
 
-export const App = () => {
+function App() {
   return (
     <>
       <Container>
@@ -28,6 +31,6 @@ export const App = () => {
       </Container>
     </>
   );
-};
+}
 
 export default App;
