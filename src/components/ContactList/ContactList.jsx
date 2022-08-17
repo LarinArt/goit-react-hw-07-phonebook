@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
-import Contact from './Contact';
-import { List, Item } from './Contacts.styled';
+import Contact from '../Contact';
+import { List, Item } from './ContactList.styled';
 import Loader from 'components/Loader';
 import { useGetContactsQuery } from 'store/contact-api';
 import NotFound from 'components/NotFound';
 import { getFilter } from 'store/contact-selectors';
 
-function ContactList() {
+export const ContactList = () => {
   const { data: contacts, isFetching, error } = useGetContactsQuery();
   const { filter } = useSelector(state => getFilter(state));
 
@@ -36,6 +36,6 @@ function ContactList() {
         })}
     </List>
   );
-}
+};
 
 export default ContactList;

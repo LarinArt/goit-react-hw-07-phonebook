@@ -15,7 +15,7 @@ import useShowModal from 'hooks/useShowModal';
 import DeletingContact from 'components/DeletingContact';
 
 function Contact({ id, name, phone }) {
-  const { showModal, togleModal } = useShowModal(false);
+  const { showModal, toggleModal } = useShowModal(false);
 
   const navigate = useNavigate();
   const openEditPage = () => navigate(`/contacts/${id}/edit`);
@@ -23,8 +23,8 @@ function Contact({ id, name, phone }) {
   return (
     <>
       {showModal && (
-        <Modal onClose={togleModal} title={name}>
-          <DeletingContact id={id} name={name} togleModal={togleModal} />
+        <Modal onClose={toggleModal} title={name}>
+          <DeletingContact id={id} name={name} toggleModal={toggleModal} />
         </Modal>
       )}
 
@@ -37,7 +37,7 @@ function Contact({ id, name, phone }) {
           </Number>
         </StyledLink>
         <ButtonWrapper>
-          <Button type="button" onClick={togleModal}>
+          <Button type="button" onClick={toggleModal}>
             <FaTrash />
           </Button>
           <Button type="button" onClick={openEditPage}>

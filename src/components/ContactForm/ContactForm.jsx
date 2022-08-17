@@ -8,7 +8,6 @@ import { Formik, Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import { Report } from 'notiflix';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Button } from 'components/ui/Button';
 
 function ContactForm() {
@@ -27,8 +26,6 @@ function ContactForm() {
       : createContact({ name, phone });
 
     navigate('/');
-
-    Notify.success(`The ${name} has been added to your contact list.`);
   };
 
   const contactSchema = yup.object({

@@ -1,7 +1,6 @@
-import { FaTrash, FaUserEdit, FaArrowLeft } from 'react-icons/fa';
+import { FaTrash, FaUserEdit } from 'react-icons/fa';
 import {
   Wrapper,
-  GoBack,
   PersonalData,
   Name,
   Label,
@@ -10,7 +9,7 @@ import {
   Button,
   EditButton,
 } from './ContactInfo.styled';
-import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
+import { Route, Routes, useParams } from 'react-router-dom';
 import ChangeContactPage from 'pages/ChangeContactPage';
 import { useGetContactByidQuery } from 'store/contact-api';
 import Loader from 'components/Loader';
@@ -20,9 +19,9 @@ import useShowModal from 'hooks/useShowModal';
 import DeletingContact from 'components/DeletingContact';
 
 function ContactInfo() {
-  const { showModal, togleModal } = useShowModal(false);
+  const { showModal, toggleModal } = useShowModal(false);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { contactId } = useParams();
 
   const {
@@ -34,11 +33,11 @@ function ContactInfo() {
   return (
     <>
       {showModal && (
-        <Modal onClose={togleModal} title={contact.name}>
+        <Modal onClose={toggleModal} title={contact.name}>
           <DeletingContact
             id={contactId}
             name={contact.name}
-            togleModal={togleModal}
+            toggleModal={toggleModal}
           />
         </Modal>
       )}
@@ -47,9 +46,9 @@ function ContactInfo() {
       {error && <NotFound data={error.data} status={error.status} />}
       {contact && (
         <Wrapper>
-          <GoBack type="button" onClick={() => navigate('/')}>
+          {/* <GoBack type="button" onClick={() => navigate('/')}>
             <FaArrowLeft />
-          </GoBack>
+          </GoBack> */}
           <PersonalData>
             <Name>{contact.name}</Name>
             <Phone>
@@ -58,7 +57,7 @@ function ContactInfo() {
             </Phone>
           </PersonalData>
           <ButtonWrapper>
-            <Button type="button" onClick={togleModal}>
+            <Button type="button" onClick={toggleModal}>
               <FaTrash />
             </Button>
             <EditButton to="edit" type="button">

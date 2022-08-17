@@ -1,5 +1,5 @@
 import Container from 'components/ui/Container';
-import ContactForm from 'components/Contacts/ContactForm';
+import ContactForm from 'components/ContactForm';
 
 function AddContactPage() {
   return (

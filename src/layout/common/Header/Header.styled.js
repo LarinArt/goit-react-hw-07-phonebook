@@ -11,8 +11,7 @@ export const Title = styled(Link)`
 
   color: ${p => p.theme.colors.mainTextColor};
 
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 40px 0;
 `;
 
 export const Button = styled(Link)`

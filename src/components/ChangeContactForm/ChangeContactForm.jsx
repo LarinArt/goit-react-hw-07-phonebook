@@ -9,7 +9,7 @@ import {
 import { useParams, useNavigate } from 'react-router-dom';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-function ChangeContactForm() {
+const ChangeContactForm = () => {
   const { contactId } = useParams();
   const navigate = useNavigate();
 
@@ -71,6 +71,6 @@ function ChangeContactForm() {
       </Formik>
     )
   );
-}
+};
 
 export default ChangeContactForm;

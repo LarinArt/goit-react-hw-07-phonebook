@@ -11,14 +11,14 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
-function DeletingContact({ id, name, togleModal }) {
+function DeletingContact({ id, name, toggleModal }) {
   const navigate = useNavigate();
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
 
   const deleteSelectedContact = () => {
     deleteContact(id);
     navigate('/');
-    Notify.success(`The ${name} has been removed from your contact list.`);
+    Notify.failure(`The ${name} has been removed from your contact list.`);
   };
 
   return (
@@ -28,7 +28,7 @@ function DeletingContact({ id, name, togleModal }) {
       </Text>
       <List>
         <Item>
-          <ButtonCancel type="button" onClick={togleModal}>
+          <ButtonCancel type="button" onClick={toggleModal}>
             Cancel
           </ButtonCancel>
         </Item>
@@ -45,7 +45,7 @@ function DeletingContact({ id, name, togleModal }) {
 DeletingContact.prototype = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  togleModal: PropTypes.func.isRequired,
+  toggleModal: PropTypes.func.isRequired,
 };
 
 export default DeletingContact;

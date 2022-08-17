@@ -1,5 +1,5 @@
 import Container from 'components/ui/Container';
-import ContactInfo from 'components/Contacts/ContactInfo';
+import ContactInfo from 'components/ContactInfo';
 
 function ContactInfoPage() {
   return (
