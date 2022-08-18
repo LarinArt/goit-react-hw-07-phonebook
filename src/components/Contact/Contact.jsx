@@ -11,11 +11,11 @@ import {
 } from './Contact.styled';
 import { useNavigate } from 'react-router-dom';
 import Modal from 'components/ui/Modal';
-import useShowModal from 'hooks/useShowModal';
-import DeletingContact from 'components/DeletingContact';
+import useToggleState from 'hooks/UseToggleState';
+import DeletingContact from 'components/ContactList/ContactsListAction/DeletingContact';
 
-function Contact({ id, name, phone }) {
-  const { showModal, toggleModal } = useShowModal(false);
+const Contact = ({ id, name, phone }) => {
+  const { showModal, toggleModal } = useToggleState(false);
 
   const navigate = useNavigate();
   const openEditPage = () => navigate(`/contacts/${id}/edit`);
@@ -47,7 +47,7 @@ function Contact({ id, name, phone }) {
       </Wrapper>
     </>
   );
-}
+};
 
 Contact.prototype = {
   name: PropTypes.string.isRequired,

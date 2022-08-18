@@ -1,12 +1,12 @@
 import Container from 'components/ui/Container/Container';
 import ContactDetail from 'components/ContactDetail';
 
-function ContactInfoPage() {
+const ContactDetailPage = () => {
   return (
     <Container>
       <ContactDetail />
     </Container>
   );
-}
+};
 
-export default ContactInfoPage;
+export default ContactDetailPage;

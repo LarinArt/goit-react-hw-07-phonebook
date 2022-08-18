@@ -3,7 +3,7 @@ import { Input } from 'components/ui/input';
 import { Label, Text } from './Filter.styled';
 import { changeFilter } from 'store/contacts-slice';
 
-function Filter() {
+const Filter = () => {
   const dispatch = useDispatch();
 
   const changeFieldFilter = e => {
@@ -17,6 +17,6 @@ function Filter() {
       <Input type="text" onChange={changeFieldFilter} name="filter" />
     </Label>
   );
-}
+};
 
 export default Filter;

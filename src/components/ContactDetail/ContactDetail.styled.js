@@ -40,7 +40,7 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
 
-  width: 49%;
+  width: 45%;
   height: 30px;
 
   border: none;
@@ -61,7 +61,7 @@ export const EditButton = styled(Link)`
   align-items: center;
   justify-content: center;
 
-  width: 49%;
+  width: 45%;
   height: 30px;
 
   border: none;

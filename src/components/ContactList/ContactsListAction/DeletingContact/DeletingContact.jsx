@@ -11,7 +11,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
-function DeletingContact({ id, name, toggleModal }) {
+const DeletingContact = ({ id, name, toggleModal }) => {
   const navigate = useNavigate();
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
 
@@ -40,7 +40,7 @@ function DeletingContact({ id, name, toggleModal }) {
       </List>
     </>
   );
-}
+};
 
 DeletingContact.prototype = {
   id: PropTypes.string.isRequired,

@@ -6,7 +6,7 @@ import { Backdrop, ModalWrapper, Wrapper, Title, Button } from './Modal.styled';
 
 const modalRoot = document.querySelector('#modal-root');
 
-function Modal({ children, onClose, title }) {
+const Modal = ({ children, onClose, title }) => {
   useEffect(() => {
     const onPessKeyDown = e => {
       if (e.code === 'Escape') {
@@ -39,7 +39,7 @@ function Modal({ children, onClose, title }) {
     </Backdrop>,
     modalRoot,
   );
-}
+};
 
 Modal.prototype = {
   children: PropTypes.element,

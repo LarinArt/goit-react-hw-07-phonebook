@@ -1,7 +1,7 @@
 import { Wrapper, Title, Text, StyledLink } from './NotFound.styled';
 import propTypes from 'prop-types';
 
-function NotFound({ data, status }) {
+const NotFound = ({ data, status }) => {
   return (
     <Wrapper>
       <Title>
@@ -11,7 +11,7 @@ function NotFound({ data, status }) {
       <StyledLink to="/">Go back to the main page</StyledLink>
     </Wrapper>
   );
-}
+};
 
 NotFound.prototype = {
   data: propTypes.string,

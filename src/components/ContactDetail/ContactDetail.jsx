@@ -9,17 +9,16 @@ import {
   Button,
   EditButton,
 } from './ContactDetail.styled';
-import { Route, Routes, useParams } from 'react-router-dom';
-import ChangeContactPage from 'pages/ChangeContactPage';
+import { useParams } from 'react-router-dom';
 import { useGetContactByidQuery } from 'store/contact-api';
 import Loader from 'components/Loader';
 import NotFound from 'components/NotFound';
 import Modal from 'components/ui/Modal';
-import useShowModal from 'hooks/useShowModal';
-import DeletingContact from 'components/DeletingContact';
+import useToggleState from 'hooks/UseToggleState';
+import DeletingContact from 'components/ContactList/ContactsListAction/DeletingContact';
 
 const ContactDetail = () => {
-  const { showModal, toggleModal } = useShowModal(false);
+  const { showModal, toggleModal } = useToggleState(false);
 
   const { contactId } = useParams();
 
@@ -62,10 +61,6 @@ const ContactDetail = () => {
           </ButtonWrapper>
         </Wrapper>
       )}
-
-      <Routes>
-        <Route path="edit" element={<ChangeContactPage />} />
-      </Routes>
     </>
   );
 };
