@@ -1,4 +1,4 @@
-import { Label, StyledField } from './ContactForm.styled';
+import { Label, StyledField } from './AddContactForm.styled';
 import { Title } from 'components/ui/Title';
 import {
   useCreateContactMutation,
@@ -9,8 +9,10 @@ import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import { Report } from 'notiflix';
 import { Button } from 'components/ui/Button';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
-function ContactForm() {
+const AddContactForm = () => {
   const navigate = useNavigate();
 
   const [createContact] = useCreateContactMutation();
@@ -30,7 +32,6 @@ function ContactForm() {
 
   const contactSchema = yup.object({
     name: yup.string().required().min(3).max(30),
-    phone: yup.number().required(),
   });
 
   return (
@@ -39,7 +40,7 @@ function ContactForm() {
       onSubmit={onSubmitForm}
       validationSchema={contactSchema}
     >
-      {({ values, handleChange, handleSubmit, isSubmitting }) => (
+      {({ values, handleChange, handleSubmit, isSubmitting, handleBlur }) => (
         <Form onSubmit={handleSubmit}>
           <Label>
             <Title>Name</Title>
@@ -53,11 +54,24 @@ function ContactForm() {
           </Label>
           <Label>
             <Title>Phone</Title>
-            <StyledField
-              type="tel"
-              name="phone"
-              onChange={handleChange}
-              value={values.phone}
+            <PhoneInput
+              inputStyle={{
+                width: '270px',
+                height: '40px',
+
+                fontSize: '14px',
+                paddingLeft: '48px',
+                borderColor: '#2b2b2b',
+                borderRadius: '0px',
+              }}
+              buttonStyle={{ borderColor: '#2b2b2b', borderRadius: '0px' }}
+              dropdownStyle={{ width: '270px' }}
+              inputProps={{ name: 'phone' }}
+              country={'ua'}
+              onChange={(phoneNumber, country, e) => {
+                handleChange(e);
+              }}
+              onBlur={handleBlur}
             />
             <ErrorMessage name="phone" component="div" />
           </Label>
@@ -68,6 +82,6 @@ function ContactForm() {
       )}
     </Formik>
   );
-}
+};
 
-export default ContactForm;
+export default AddContactForm;

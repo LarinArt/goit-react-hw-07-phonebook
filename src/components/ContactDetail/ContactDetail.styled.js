@@ -3,28 +3,6 @@ import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div``;
 
-export const GoBack = styled.button`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 100px;
-  height: 30px;
-  margin-bottom: 30px;
-
-  border: none;
-  background-color: #2b2b2b;
-  color: ${p => p.theme.colors.secondTextColor};
-
-  cursor: pointer;
-  transition: background-color ${p => p.theme.colors.mainAnimationHover};
-
-  :hover,
-  :focus {
-    background-color: ${p => p.theme.colors.accentBgColor};
-  }
-`;
-
 export const PersonalData = styled.div`
   margin-bottom: 30px;
 `;

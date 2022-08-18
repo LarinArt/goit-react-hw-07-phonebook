@@ -8,6 +8,8 @@ import {
 } from 'store/contact-api';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 const ChangeContactForm = () => {
   const { contactId } = useParams();
@@ -38,9 +40,9 @@ const ChangeContactForm = () => {
   return (
     contact && (
       <Formik initialValues={initialValues} onSubmit={onSubmitForm}>
-        {({ values, handleChange, handleSubmit }) => (
+        {({ values, handleChange, handleSubmit, handleBlur }) => (
           <>
-            <MainTitle>{`Edit Contact ${contact.name}`}</MainTitle>
+            <MainTitle>{`Edit Contact — "${contact.name}"`}</MainTitle>
             <Form onSubmit={handleSubmit}>
               <Label>
                 <Title>Name</Title>
@@ -54,10 +56,35 @@ const ChangeContactForm = () => {
               </Label>
               <Label>
                 <Title>Phone</Title>
-                <StyledField
-                  type="tel"
-                  name="phone"
-                  onChange={handleChange}
+                <PhoneInput
+                  inputStyle={{
+                    width: '270px',
+                    height: '40px',
+
+                    fontSize: '14px',
+                    paddingLeft: '48px',
+                    border: 'none',
+                    borderBottom: '1px solid',
+                    borderColor: '#2b2b2b',
+                    borderRadius: '0px',
+                  }}
+                  buttonStyle={{
+                    border: 'none',
+                    borderBottom: '1px solid',
+                    borderColor: '#2b2b2b',
+                    borderRadius: '0px',
+                  }}
+                  dropdownStyle={{ width: '270px' }}
+                  inputProps={{
+                    name: 'phone',
+                    required: true,
+                    autoFocus: true,
+                  }}
+                  country={'ua'}
+                  onChange={(phoneNumber, country, e) => {
+                    handleChange(e);
+                  }}
+                  onBlur={handleBlur}
                   value={values.phone}
                 />
                 <ErrorMessage name="phone" component="div" />

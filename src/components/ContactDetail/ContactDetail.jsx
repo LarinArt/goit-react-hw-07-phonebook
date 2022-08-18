@@ -8,7 +8,7 @@ import {
   ButtonWrapper,
   Button,
   EditButton,
-} from './ContactInfo.styled';
+} from './ContactDetail.styled';
 import { Route, Routes, useParams } from 'react-router-dom';
 import ChangeContactPage from 'pages/ChangeContactPage';
 import { useGetContactByidQuery } from 'store/contact-api';
@@ -18,7 +18,7 @@ import Modal from 'components/ui/Modal';
 import useShowModal from 'hooks/useShowModal';
 import DeletingContact from 'components/DeletingContact';
 
-function ContactInfo() {
+const ContactDetail = () => {
   const { showModal, toggleModal } = useShowModal(false);
 
   const { contactId } = useParams();
@@ -68,6 +68,6 @@ function ContactInfo() {
       </Routes>
     </>
   );
-}
+};
 
-export default ContactInfo;
+export default ContactDetail;

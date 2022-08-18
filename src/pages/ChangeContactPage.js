@@ -1,7 +1,7 @@
 import ChangeContactForm from 'components/ChangeContactForm';
 
-function ChangeContactPage() {
+const ChangeContactPage = () => {
   return <ChangeContactForm />;
-}
+};
 
 export default ChangeContactPage;

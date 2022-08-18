@@ -5,7 +5,6 @@ export const ContainerWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
 `;
 
 export const Title = styled.h2`

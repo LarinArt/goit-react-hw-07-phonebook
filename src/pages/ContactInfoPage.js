@@ -1,10 +1,10 @@
-import Container from 'components/ui/Container';
-import ContactInfo from 'components/ContactInfo';
+import Container from 'components/ui/Container/Container';
+import ContactDetail from 'components/ContactDetail';
 
 function ContactInfoPage() {
   return (
     <Container>
-      <ContactInfo />
+      <ContactDetail />
     </Container>
   );
 }

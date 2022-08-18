@@ -1,12 +1,12 @@
-import Container from 'components/ui/Container';
-import ContactForm from 'components/ContactForm';
+import Container from 'components/ui/Container/Container';
+import AddContactForm from 'components/AddContactForm';
 
-function AddContactPage() {
+const AddContactPage = () => {
   return (
     <Container>
-      <ContactForm />
+      <AddContactForm />
     </Container>
   );
-}
+};
 
 export default AddContactPage;
