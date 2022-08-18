@@ -8,18 +8,13 @@ import {
   Label,
   ButtonWrapper,
   Button,
+  ButtonLink,
 } from './Contact.styled';
-import { useNavigate } from 'react-router-dom';
 import Modal from 'components/ui/Modal';
 import useToggleState from 'hooks/UseToggleState';
 import DeletingContact from 'components/ContactList/ContactsListAction/DeletingContact';
-
 const Contact = ({ id, name, phone }) => {
   const { showModal, toggleModal } = useToggleState(false);
-
-  const navigate = useNavigate();
-  const openEditPage = () => navigate(`/contacts/${id}/edit`);
-
   return (
     <>
       {showModal && (
@@ -27,7 +22,6 @@ const Contact = ({ id, name, phone }) => {
           <DeletingContact id={id} name={name} toggleModal={toggleModal} />
         </Modal>
       )}
-
       <Wrapper>
         <StyledLink to={`/contacts/${id}`}>
           <Name>{name}</Name>
@@ -40,15 +34,14 @@ const Contact = ({ id, name, phone }) => {
           <Button type="button" onClick={toggleModal}>
             <FaTrash />
           </Button>
-          <Button type="button" onClick={openEditPage}>
+          <ButtonLink to={`/contacts/${id}`}>
             <FaUserEdit />
-          </Button>
+          </ButtonLink>
         </ButtonWrapper>
       </Wrapper>
     </>
   );
 };
-
 Contact.prototype = {
   name: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
@@ -57,5 +50,4 @@ Contact.prototype = {
   company: PropTypes.string,
   photo: PropTypes.string,
 };
-
 export default Contact;

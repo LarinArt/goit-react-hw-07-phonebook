@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const Wrapper = styled.div``;
+export const ContactDetailWrapper = styled.div`
+  min-width: 300px;
+`;
 
 export const PersonalData = styled.div`
   margin-bottom: 30px;

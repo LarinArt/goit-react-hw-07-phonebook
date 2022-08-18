@@ -1,6 +1,6 @@
 import { FaTrash, FaUserEdit } from 'react-icons/fa';
 import {
-  Wrapper,
+  ContactDetailWrapper,
   PersonalData,
   Name,
   Label,
@@ -9,25 +9,23 @@ import {
   Button,
   EditButton,
 } from './ContactDetail.styled';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation, Outlet } from 'react-router-dom';
 import { useGetContactByidQuery } from 'store/contact-api';
 import Loader from 'components/Loader';
 import NotFound from 'components/NotFound';
 import Modal from 'components/ui/Modal';
 import useToggleState from 'hooks/UseToggleState';
 import DeletingContact from 'components/ContactList/ContactsListAction/DeletingContact';
-
+import { Suspense } from 'react';
 const ContactDetail = () => {
   const { showModal, toggleModal } = useToggleState(false);
-
+  const location = useLocation();
   const { contactId } = useParams();
-
   const {
     data: contact,
     isFetching,
     error,
   } = useGetContactByidQuery(contactId);
-
   return (
     <>
       {showModal && (
@@ -39,11 +37,10 @@ const ContactDetail = () => {
           />
         </Modal>
       )}
-
       {isFetching && <Loader />}
       {error && <NotFound data={error.data} status={error.status} />}
       {contact && (
-        <Wrapper>
+        <ContactDetailWrapper>
           <PersonalData>
             <Name>{contact.name}</Name>
             <Phone>
@@ -55,14 +52,16 @@ const ContactDetail = () => {
             <Button type="button" onClick={toggleModal}>
               <FaTrash />
             </Button>
-            <EditButton to="edit" type="button">
+            <EditButton to="edit" state={{ from: location }}>
               <FaUserEdit />
             </EditButton>
           </ButtonWrapper>
-        </Wrapper>
+          <Suspense>
+            <Outlet />
+          </Suspense>
+        </ContactDetailWrapper>
       )}
     </>
   );
 };
-
 export default ContactDetail;

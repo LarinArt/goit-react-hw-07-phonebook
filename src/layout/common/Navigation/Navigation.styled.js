@@ -6,6 +6,7 @@ export const ContactsNavLink = styled(NavLink)`
   font-weight: ${p => p.theme.fontWeights.semibold};
   text-decoration: none;
   color: black;
+  border-bottom: 3px solid currentColor;
 
   &.active {
     color: ${p => p.theme.colors.accentTextColor};

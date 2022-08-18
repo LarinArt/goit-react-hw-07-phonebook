@@ -15,7 +15,7 @@ const ChangeContactForm = () => {
   const { contactId } = useParams();
   const navigate = useNavigate();
 
-  const [chengeContact, { isLoading: isUpdating }] = useChangeContactMutation();
+  const [changeContact, { isLoading: isUpdating }] = useChangeContactMutation();
   const { data: contact } = useGetContactByidQuery(contactId);
 
   const onSubmitForm = values => {
@@ -24,7 +24,7 @@ const ChangeContactForm = () => {
       return;
     }
 
-    chengeContact({ contactId, ...values });
+    changeContact({ contactId, ...values });
     navigate(`/contacts/${contactId}`);
     Notify.success('The contact has been successfully changed.');
   };

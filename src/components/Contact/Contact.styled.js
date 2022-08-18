@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { breakpoints } from 'styleConfig/breakpoints';
 
 export const Wrapper = styled.div`
   width: 250px;
@@ -27,10 +26,6 @@ export const Name = styled.p`
 
   padding: 10px;
   margin-bottom: 15px;
-
-  /* @media (${breakpoints.laptop}) {
-    margin-bottom: 30px;
-  } */
 `;
 
 export const Number = styled.p`
@@ -46,6 +41,28 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const Button = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48%;
+  height: 30px;
+  padding: 10px;
+
+  border: none;
+  background-color: #2b2b2b;
+  color: ${p => p.theme.colors.secondTextColor};
+
+  cursor: pointer;
+  transition: background-color ${p => p.theme.colors.mainAnimationHover};
+
+  :hover,
+  :focus {
+    background-color: ${p => p.theme.colors.accentBgColor};
+  }
+`;
+
+export const ButtonLink = styled(Link)`
   display: inline-flex;
   align-items: center;
   justify-content: center;

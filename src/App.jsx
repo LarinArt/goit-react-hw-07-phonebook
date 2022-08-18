@@ -1,9 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
+import { Wrapper } from './components/ui/Wrapper';
+import { SharedLayout } from 'layout/SharedLayout';
+
 import HomePage from 'pages/HomePage';
 import AddContactPage from 'pages/AddContactPage';
 import ContactDetailPage from 'pages/ContactDetailPage';
-import { Wrapper } from './components/ui/Wrapper';
-import { SharedLayout } from 'layout/SharedLayout';
 import ChangeContactPage from 'pages/ChangeContactPage';
 // import { lazy } from 'react';
 
@@ -33,5 +34,4 @@ const App = () => {
     </>
   );
 };
-
 export default App;
