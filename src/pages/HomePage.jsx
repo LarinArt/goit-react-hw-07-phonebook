@@ -1,9 +1,9 @@
-import Container from 'components/ui/Container/Container';
+import { Container } from 'components/ui/Container';
 import Filter from 'components/Filter';
 import ContactList from 'components/ContactList';
 import Message from '../components/ui/Message';
-import { useGetContactsQuery } from 'store/contact-api';
-import { Button, ButtonText } from '../layout/common/Header/Header.styled';
+import { useGetContactsQuery } from 'store/contacts-slice';
+import { RouterLink, LinkText } from 'components/ui';
 import { BsFillPersonPlusFill } from 'react-icons/bs';
 
 const HomePage = () => {
@@ -11,10 +11,10 @@ const HomePage = () => {
 
   return (
     <Container title="Contacts">
-      <Button to="/contacts/add">
-        <ButtonText>Add new contact</ButtonText>
+      <RouterLink to="/contacts/add">
+        <LinkText>Add new contact</LinkText>
         <BsFillPersonPlusFill size={20} />
-      </Button>
+      </RouterLink>
       <Filter />
       {!data || data.length === 0 ? <Message /> : <ContactList />}
     </Container>

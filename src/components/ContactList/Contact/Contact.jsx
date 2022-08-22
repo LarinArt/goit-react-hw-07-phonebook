@@ -1,25 +1,18 @@
 import PropTypes from 'prop-types';
 import { FaTrash, FaUserEdit } from 'react-icons/fa';
-import {
-  Wrapper,
-  StyledLink,
-  Name,
-  Number,
-  Label,
-  ButtonWrapper,
-  Button,
-  ButtonLink,
-} from './Contact.styled';
+import { Wrapper, StyledLink, Name, Number, Label } from './Contact.styled';
 import Modal from 'components/ui/Modal';
 import useToggleState from 'hooks/UseToggleState';
-import DeletingContact from 'components/ContactList/ContactsListAction/DeletingContact';
-const Contact = ({ id, name, phone }) => {
+import { ContactModalContent } from '../../ContactModalContent';
+import { ContactActios } from './ContactActions';
+
+export const Contact = ({ id, name, phone }) => {
   const { showModal, toggleModal } = useToggleState(false);
   return (
     <>
       {showModal && (
         <Modal onClose={toggleModal} title={name}>
-          <DeletingContact id={id} name={name} toggleModal={toggleModal} />
+          <ContactModalContent id={id} name={name} toggleModal={toggleModal} />
         </Modal>
       )}
       <Wrapper>
@@ -30,14 +23,12 @@ const Contact = ({ id, name, phone }) => {
             {phone}
           </Number>
         </StyledLink>
-        <ButtonWrapper>
-          <Button type="button" onClick={toggleModal}>
-            <FaTrash />
-          </Button>
-          <ButtonLink to={`/contacts/${id}`}>
-            <FaUserEdit />
-          </ButtonLink>
-        </ButtonWrapper>
+        <ContactActios
+          onClick={toggleModal}
+          icon={<FaTrash />}
+          path={`/contacts/${id}`}
+          linkIcon={<FaUserEdit />}
+        />
       </Wrapper>
     </>
   );
@@ -50,4 +41,3 @@ Contact.prototype = {
   company: PropTypes.string,
   photo: PropTypes.string,
 };
-export default Contact;

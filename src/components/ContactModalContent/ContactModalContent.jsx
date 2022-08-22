@@ -5,13 +5,13 @@ import {
   Item,
   ButtonCancel,
   ButtonDelete,
-} from './DeletingContact.styled';
-import { useDeleteContactMutation } from 'store/contact-api';
+} from './ContactModalContent.styled';
+import { useDeleteContactMutation } from 'store/contacts-slice';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
-const DeletingContact = ({ id, name, toggleModal }) => {
+export const ContactModalContent = ({ id, name, toggleModal }) => {
   const navigate = useNavigate();
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
 
@@ -42,10 +42,8 @@ const DeletingContact = ({ id, name, toggleModal }) => {
   );
 };
 
-DeletingContact.prototype = {
+ContactModalContent.prototype = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   toggleModal: PropTypes.func.isRequired,
 };
-
-export default DeletingContact;

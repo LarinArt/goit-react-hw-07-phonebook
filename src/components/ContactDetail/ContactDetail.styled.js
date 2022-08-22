@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const ContactDetailWrapper = styled.div`
   min-width: 300px;
@@ -30,51 +29,4 @@ export const Phone = styled.p`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-`;
-
-export const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-export const Button = styled.button`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 45%;
-  height: 30px;
-
-  border: none;
-  background-color: #2b2b2b;
-  color: ${p => p.theme.colors.secondTextColor};
-
-  cursor: pointer;
-  transition: background-color ${p => p.theme.colors.mainAnimationHover};
-
-  :hover,
-  :focus {
-    background-color: ${p => p.theme.colors.accentBgColor};
-  }
-`;
-
-export const EditButton = styled(Link)`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 45%;
-  height: 30px;
-
-  border: none;
-  background-color: #2b2b2b;
-  color: ${p => p.theme.colors.secondTextColor};
-
-  cursor: pointer;
-  transition: background-color ${p => p.theme.colors.mainAnimationHover};
-
-  :hover,
-  :focus {
-    background-color: ${p => p.theme.colors.accentBgColor};
-  }
 `;

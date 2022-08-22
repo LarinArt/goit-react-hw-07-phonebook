@@ -1,11 +1,20 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Header } from './common/Header/Header';
+import { Header } from './common/Header';
+import { SpinnerDotted } from 'spinners-react';
+import { MainContainer } from 'layout/common/MainContainer';
 
-export const SharedLayout = () => {
+const SharedLayout = () => {
   return (
-    <>
+    <MainContainer>
       <Header />
-      <Outlet />
-    </>
+      <main>
+        <Suspense fallback={<SpinnerDotted />}>
+          <Outlet />
+        </Suspense>
+      </main>
+    </MainContainer>
   );
 };
+
+export default SharedLayout;

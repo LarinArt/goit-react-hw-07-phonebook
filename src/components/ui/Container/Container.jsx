@@ -14,5 +14,3 @@ Container.prototype = {
   children: PropTypes.element,
   title: PropTypes.string,
 };
-
-export default Container;

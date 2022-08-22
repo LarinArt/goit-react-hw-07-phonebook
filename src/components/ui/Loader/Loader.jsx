@@ -1,12 +1,10 @@
 import { LoaderWrapper } from './Loader.styled';
-import { Icon } from '../ui/Icon';
+import { Icon } from '../Icon';
 
-const Loader = () => {
+export const Loader = () => {
   return (
     <LoaderWrapper>
       <Icon />
     </LoaderWrapper>
   );
 };
-
-export default Loader;

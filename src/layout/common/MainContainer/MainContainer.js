@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const MainContainer = styled.div`
   min-height: 700px;
   width: 500px;
 

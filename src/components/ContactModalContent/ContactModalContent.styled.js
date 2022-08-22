@@ -16,7 +16,6 @@ export const List = styled.ul`
 
 export const Item = styled.li`
   margin-right: 10px;
-
   :last-child {
     margin-right: 0;
   }
@@ -26,18 +25,14 @@ export const ButtonCancel = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 100px;
   height: 30px;
-
   background-color: ${p => p.theme.colors.secondBgColor};
   color: ${p => p.theme.colors.secondTextColor};
   font-family: inherit;
   border: none;
-
   cursor: pointer;
   transition: background-color ${p => p.theme.colors.mainAnimationHover};
-
   :hover,
   :focus {
     background-color: ${p => p.theme.colors.accentBgColor};
@@ -48,18 +43,14 @@ export const ButtonDelete = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 100px;
   height: 30px;
-
   background-color: red;
   color: ${p => p.theme.colors.secondTextColor};
   font-family: inherit;
   border: none;
-
   cursor: pointer;
   transition: background-color ${p => p.theme.colors.mainAnimationHover};
-
   :hover,
   :focus {
     background-color: ${p => p.theme.colors.accentBgColor};

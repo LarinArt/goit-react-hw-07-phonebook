@@ -1,6 +1,6 @@
 import { Title } from './Header.styled';
 import { Navigation } from '../Navigation/Navigation';
-import Container from 'components/ui/Container/Container';
+import { Container } from 'components/ui/Container';
 
 export const Header = () => {
   return (
@@ -12,5 +12,3 @@ export const Header = () => {
     </>
   );
 };
-
-export default Header;

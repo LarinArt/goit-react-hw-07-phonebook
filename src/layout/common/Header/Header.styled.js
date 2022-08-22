@@ -13,30 +13,3 @@ export const Title = styled(Link)`
 
   padding: 40px 0;
 `;
-
-export const Button = styled(Link)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 270px;
-  height: 40px;
-  margin: 50px auto;
-
-  background-color: ${p => p.theme.colors.secondBgColor};
-  color: ${p => p.theme.colors.secondTextColor};
-  font-family: inherit;
-  border: none;
-
-  cursor: pointer;
-  transition: background-color ${p => p.theme.colors.mainAnimationHover};
-
-  :hover,
-  :focus {
-    background-color: ${p => p.theme.colors.accentBgColor};
-  }
-`;
-
-export const ButtonText = styled.span`
-  margin-right: 10px;
-`;
